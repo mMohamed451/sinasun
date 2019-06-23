@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <style>
+              nav{
+  background-color: #333;
+  margin-top:0px;
+  padding-top:0px;
+
+      }
+     
+ ul {
+  list-style-type: none;
+  margin-right: 5vw;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  display: inline-block;
+
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.container .btn:hover {
+  background-color: #555;
+
+}
+            </style>
+</head>
+<body>
+        <nav>
+                <ul>
+                    <li style="float:right"><a href="/aaa">Upload</a></li>
+                    <li style="float:right"><a class="active" href="/getproducts">Product List</a></li>
+                    <li style="float:right"><a href="#contact">Signout</a></li>
+                  </ul>
+            </nav>
+        
+    
+  <div class="products-container">
+    <% myObjects.forEach((product)=> { %>
+        <form class="container" action="/deleteproduct/'<%= product.id %>'"  method="DELETE">
+            <h4><b><%= product.name %></b></h4> 
+            <img src="/uploads/<%= product.url %>" alt="Snow" style="width:100%">
+            <button class="btn" style="width:auto;height:auto;margin:0;padding:10px;   ">
+                <img src="/uploads/DeleteLogo.png" style="width: 30px; height:20px;">
+            </button>
+        </form>
+    <% }); %>
+  </div>
+
+        </body>
+</html>

@@ -1,0 +1,17 @@
+.makeItBlue{
+    color: blue;
+}
+
+
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+
+.padding-100{
+padding-top:100px;
+}
+
+.olive-oils-image{
+width:300px; margin-left:auto;margin-right:auto
+}
